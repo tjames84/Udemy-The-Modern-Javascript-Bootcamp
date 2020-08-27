@@ -27,6 +27,8 @@
 
 // check for existing saved data
 // read existing notes from local storage
+
+// console.log(uuidv4())
 const getSavedNotes = () => {
   const notesJSON = localStorage.getItem("notes");
 
