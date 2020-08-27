@@ -10,6 +10,11 @@ const getSavedTodos = () => {
   }
 };
 
+// Save todos to localStroage
+const saveTodos = (todos) => {
+  localStorage.setItem("todos", JSON.stringify(todos));
+};
+
 // remove todo from list
 const removeTodo = (id) => {
   const todoIndex = todos.findIndex((todo) => {
@@ -21,10 +26,16 @@ const removeTodo = (id) => {
   }
 };
 
-// Save todos to localStroage
-const saveTodos = (todos) => {
-  localStorage.setItem("todos", JSON.stringify(todos));
-};
+// Toggle the completed value for a given todo
+const toggleTodo = (id) => {
+  const todo = todos.find((todo) => {
+    return todo.id === id;
+  })
+
+  if (todo !== undefined) {
+    todo.completed = !todo.completed;
+  }
+}
 
 // Render application todos based on filters
 const renderTodos = (todos, filters) => {
@@ -60,7 +71,13 @@ const generateTodoDOM = (todo) => {
 
   // Setup todo checkbox
   checkbox.setAttribute('type', 'checkbox');
+  checkbox.checked = todo.completed;
   todoEl.appendChild(checkbox);
+  checkbox.addEventListener("change", () => {
+    toggleTodo(todo.id);
+    saveTodos(todos);
+    renderTodos(todos, filters);
+  })
 
   // Setup the todo text
   todoText.textContent = todo.text;
