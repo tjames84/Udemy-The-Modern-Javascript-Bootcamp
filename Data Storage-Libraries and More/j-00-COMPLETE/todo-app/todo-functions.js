@@ -1,4 +1,4 @@
-//localStorage.clear(); // removes everything in localstroage
+// localStorage.clear(); // removes everything in localstroage
 // Fetch existing todos from localstorage
 const getSavedTodos = () => {
   const todosJSON = localStorage.getItem("todos");
