@@ -30,12 +30,12 @@ const removeTodo = (id) => {
 const toggleTodo = (id) => {
   const todo = todos.find((todo) => {
     return todo.id === id;
-  })
+  });
 
   if (todo !== undefined) {
     todo.completed = !todo.completed;
   }
-}
+};
 
 // Render application todos based on filters
 const renderTodos = (todos, filters) => {
