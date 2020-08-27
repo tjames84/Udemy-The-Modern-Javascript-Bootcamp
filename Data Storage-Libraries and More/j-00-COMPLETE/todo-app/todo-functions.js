@@ -10,6 +10,17 @@ const getSavedTodos = () => {
   }
 };
 
+// remove todo from list
+const removeTodo = (id) => {
+  const todoIndex = todos.findIndex((todo) => {
+    return todo.id === id;
+  });
+
+  if (todoIndex > -1) {
+    todos.splice(todoIndex, 1);
+  }
+};
+
 // Save todos to localStroage
 const saveTodos = (todos) => {
   localStorage.setItem("todos", JSON.stringify(todos));
@@ -58,6 +69,11 @@ const generateTodoDOM = (todo) => {
   // Setup the remove button
   removeButton.textContent = 'x';
   todoEl.appendChild(removeButton);
+  removeButton.addEventListener("click", () => {
+    removeTodo(todo.id);
+    saveTodos(todos);
+    renderTodos(todos, filters);
+  })
 
   return todoEl;
 };
