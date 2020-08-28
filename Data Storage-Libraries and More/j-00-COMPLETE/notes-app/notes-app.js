@@ -59,3 +59,31 @@ window.addEventListener("storage", (e) => {
 // console.log(`Hour: ${now.getHours()}`);
 // console.log(`Minute: ${now.getMinutes()}`);
 // console.log(`Second: ${now.getSeconds()}`);
+
+// Moment.js
+// https://momentjs.com/docs/
+// const now = moment();
+// console.log(now.toString());
+
+// // now.minute()
+// // console.log(now.minute());
+
+// // add and subtract
+// // .add(how many, 'years, months, days') and .subtract(how many, 'years, months days')
+// now.subtract(1, 'week').subtract(20, 'days');
+
+// // format('MMMM Do, YYYYY')
+// console.log(now.format('MMMM Do, YYYY'));
+
+// // time from now
+// console.log(now.fromNow());
+
+// // Unix in timestamp
+// const nowTimeStamp = now.valueOf();
+
+// console.log(moment(nowTimeStamp).toString())
+
+// const birthday = moment();
+// birthday.year('1984').month('09').day('27');
+
+// console.log(birthday.format('MMM D, YYYY'))
