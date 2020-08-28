@@ -104,3 +104,8 @@ const renderNotes = (notes, filters) => {
     document.querySelector("#notes").appendChild(noteEl);
   });
 };
+
+// Gererate the last edited message
+const generateLastEditied = (timestamp) => {
+  return `Last edited ${moment(note.updatedAt).fromNow()}`;
+}

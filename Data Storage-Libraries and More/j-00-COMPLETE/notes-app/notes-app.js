@@ -1,3 +1,5 @@
+// localStorage.clear(); // removes everything in localstroage
+
 let notes = getSavedNotes();
 
 const filters = {
@@ -15,12 +17,16 @@ renderNotes(notes, filters);
 
 document.querySelector("#create-note").addEventListener("click", function (e) {
   const id = uuidv4();
+  const timeStamp = moment().valueOf();
 
   notes.push({
     id: id,
     title: "",
     body: "",
+    createdAt: timeStamp,
+    updatedAt: timeStamp
   });
+
   saveNotes(notes);
   location.assign(`/edit.html#${id}`);
 });
