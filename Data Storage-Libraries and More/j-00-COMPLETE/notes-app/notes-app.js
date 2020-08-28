@@ -40,3 +40,22 @@ window.addEventListener("storage", (e) => {
     renderNotes(notes, filters);
   }
 });
+
+// Date()
+// no args gives time now
+// Date("month day year time")
+// Unix Epoch - January 1st 1970 00:00:00
+
+// const now = new Date();
+// const timeStamp = now.getTime()
+
+// const myDate = new Date(timeStamp)
+// console.log(myDate.getFullYear())
+
+// console.log(now.toString());
+// console.log(`Year: ${now.getFullYear()}`);
+// console.log(`Month: ${now.getMonth()}`);
+// console.log(`Day of month: ${now.getDate()}`);
+// console.log(`Hour: ${now.getHours()}`);
+// console.log(`Minute: ${now.getMinutes()}`);
+// console.log(`Second: ${now.getSeconds()}`);
