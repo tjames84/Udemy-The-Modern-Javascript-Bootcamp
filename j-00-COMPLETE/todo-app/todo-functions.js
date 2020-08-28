@@ -9,7 +9,7 @@ const getSavedTodos = () => {
   //   return [];
   // }
 
-  return todosJSON !== null ? JSON.parse(todosJSON) : [];
+  return todosJSON ? JSON.parse(todosJSON) : [];
 };
 
 // Save todos to localStroage
@@ -34,7 +34,7 @@ const toggleTodo = (id) => {
     return todo.id === id;
   });
 
-  if (todo !== undefined) {
+  if (todo) {
     todo.completed = !todo.completed;
   }
 };
