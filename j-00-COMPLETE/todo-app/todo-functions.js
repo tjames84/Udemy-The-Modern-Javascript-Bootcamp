@@ -3,11 +3,13 @@
 const getSavedTodos = () => {
   const todosJSON = localStorage.getItem("todos");
 
-  if (todosJSON !== null) {
-    return JSON.parse(todosJSON);
-  } else {
-    return [];
-  }
+  // if (todosJSON !== null) {
+  //   return JSON.parse(todosJSON);
+  // } else {
+  //   return [];
+  // }
+
+  return todosJSON !== null ? JSON.parse(todosJSON) : [];
 };
 
 // Save todos to localStroage
