@@ -1,3 +1,4 @@
+"use strict"
 // localStorage.clear(); // removes everything in localstroage
 
 let notes = getSavedNotes();

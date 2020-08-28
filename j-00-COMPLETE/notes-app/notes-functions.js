@@ -1,3 +1,5 @@
+'use strict'
+
 // CRUD - create, read, update, delete
 
 // creating and updating

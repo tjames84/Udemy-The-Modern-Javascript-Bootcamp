@@ -1,3 +1,4 @@
+"use strict"
 // localStorage.clear(); // removes everything in localstroage
 
 const titleElement = document.querySelector("#note-title");
