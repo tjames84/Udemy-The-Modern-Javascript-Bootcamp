@@ -37,8 +37,13 @@ const getSavedNotes = () => {
   // } else {
   //   return [];
   // }
+  
+  try {
+    return notesJSON ? JSON.parse(notesJSON) : [];
+  } catch (e) {
+    return [];
+  }
 
-  return notesJSON ? JSON.parse(notesJSON) : [];
 };
 
 // save the notes to local storage
