@@ -1,13 +1,7 @@
 const puzzleEl = document.querySelector("#puzzle");
 const guessesEl = document.querySelector("#guesses");
 
-const wordArray = ['Cat', 'Colorado', 'Dinosaur', 'Minnesota', 'snake', 'reptile', 'Astronomy', 'Mathmatics', 'Black Hole', 'Nebula', 'Galaxy'];
-const randWord = wordArray[Math.floor(Math.random() * Math.floor(wordArray.length))]
-const totalGuesses = Math.ceil(randWord.split('').length / 2);
-console.log(randWord)
-
-
-const game1 = new Hangman(randWord, totalGuesses);
+const game1 = new Hangman("Car Parts", 2);
 
 puzzleEl.textContent = game1.puzzle;
 guessesEl.textContent = game1.statusMessage;
@@ -19,14 +13,15 @@ window.addEventListener("keypress", (e) => {
   guessesEl.textContent = game1.statusMessage;
 });
 
-
-getPuzzle((error, puzzle) => {
+// Asynchornous
+getPuzzle("2", (error, puzzle) => {
   if (error) {
     console.log(`Error: ${error}`);
   } else {
     console.log(puzzle);
   }
 });
+
 
 // const puzzle = getPuzzle();
 // console.log(puzzle)
