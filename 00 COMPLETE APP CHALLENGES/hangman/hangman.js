@@ -1,7 +1,7 @@
 const Hangman = function (word, remainingGuesses) {
   (this.word = word.toLowerCase().split("")),
     (this.remainingGuesses = remainingGuesses),
-    (this.guessedLetters = ["c", "e"]);
+    (this.guessedLetters = []);
 };
 
 Hangman.prototype.getPuzzle = function () {
@@ -18,8 +18,28 @@ Hangman.prototype.getPuzzle = function () {
   return puzzle;
 };
 
-const Game1 = new Hangman("Cat", 2);
-console.log(Game1.getPuzzle());
+Hangman.prototype.makeGuess = function (guess) {
+  guess = guess.toLowerCase();
+  const isUnique = !this.guessedLetters.includes(guess);
+  const isBadGuess = !this.word.includes(guess);
 
-const Game2 = new Hangman("Colorado denver", 4);
-console.log(Game2.getPuzzle());
+  if (isUnique) {
+    this.guessedLetters.push(guess);
+  }
+
+  if (isUnique && isBadGuess) {
+    this.remainingGuesses--;
+  }
+};
+
+const game1 = new Hangman("Cat", 2);
+
+console.log(game1.getPuzzle());
+console.log(game1.remainingGuesses)
+
+window.addEventListener("keypress", function (e) {
+  const guess = String.fromCharCode(e.charCode);
+  game1.makeGuess(guess);
+  console.log(game1.getPuzzle());
+  console.log(game1.remainingGuesses);
+});
