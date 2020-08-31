@@ -19,19 +19,14 @@ window.addEventListener("keypress", (e) => {
   guessesEl.textContent = game1.statusMessage;
 });
 
-// Making an HTTP request
-// httpstatuses.com
-// mdn http message
-const request = new XMLHttpRequest();
 
-request.addEventListener("readystatechange", (e) => {
-  if (e.target.readyState === 4 && e.target.status === 200) {
-    const data = JSON.parse(e.target.responseText);
-    console.log(data);
-  } else if (e.target.readyState === 4) {
-    console.log("An error has taken place");
+getPuzzle((error, puzzle) => {
+  if (error) {
+    console.log(`Error: ${error}`);
+  } else {
+    console.log(puzzle);
   }
 });
 
-request.open("GET", "http://puzzle.mead.io/puzzle");
-request.send();
+// const puzzle = getPuzzle();
+// console.log(puzzle)
