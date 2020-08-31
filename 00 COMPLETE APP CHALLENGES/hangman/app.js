@@ -1,6 +1,13 @@
 const puzzleEl = document.querySelector("#puzzle");
 const guessesEl = document.querySelector("#guesses");
-const game1 = new Hangman("Cat", 2);
+
+let wordArray = ['Cat', 'Colorado', 'Dinosaur', 'Minnesota', 'snake', 'reptile', 'Astronomy', 'Mathmatics', 'Black Hole', 'Nebula', 'Galaxy'];
+let randWord = wordArray[Math.floor(Math.random() * Math.floor(wordArray.length))]
+let totalGuesses = Math.ceil(randWord.split('').length / 2);
+console.log(randWord)
+
+
+const game1 = new Hangman(randWord, totalGuesses);
 
 puzzleEl.textContent = game1.getPuzzle();
 guessesEl.textContent = game1.getStatusMessage();
