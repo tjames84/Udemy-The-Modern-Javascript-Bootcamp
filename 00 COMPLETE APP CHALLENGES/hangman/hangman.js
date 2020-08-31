@@ -1,11 +1,29 @@
 const Hangman = function (word, remainingGuesses) {
-  this.word = word.toLowerCase().split('')
-  this.remainingGuesses = remainingGuesses
-  this.guessedLetters = []
-  this.status = 'playing ...'
+  this.word = word.toLowerCase().split("");
+  this.remainingGuesses = remainingGuesses;
+  this.guessedLetters = [];
+  this.status = "playing ...";
 };
 
 Hangman.prototype.calculatStatus = function () {
+  // filter()
+  // const lettersUnguessed = this.word.filter((letter) => {
+  //   return !this.guessedLetters.includes(letter);
+  // });
+
+  // const finished = lettersUnguessed === 0;
+
+  // forEach()
+  // let finished = true;
+
+  // this.word.forEach((letter) => {
+  //   if (this.guessedLetters.includes(letter)) {
+  //   } else {
+  //     finished = false;
+  //   }
+  // });
+
+  // every()
   const finished = this.word.every((letter) =>
     this.guessedLetters.includes(letter)
   );
