@@ -1,9 +1,9 @@
 const puzzleEl = document.querySelector("#puzzle");
 const guessesEl = document.querySelector("#guesses");
 
-let wordArray = ['Cat', 'Colorado', 'Dinosaur', 'Minnesota', 'snake', 'reptile', 'Astronomy', 'Mathmatics', 'Black Hole', 'Nebula', 'Galaxy'];
-let randWord = wordArray[Math.floor(Math.random() * Math.floor(wordArray.length))]
-let totalGuesses = Math.ceil(randWord.split('').length / 2);
+const wordArray = ['Cat', 'Colorado', 'Dinosaur', 'Minnesota', 'snake', 'reptile', 'Astronomy', 'Mathmatics', 'Black Hole', 'Nebula', 'Galaxy'];
+const randWord = wordArray[Math.floor(Math.random() * Math.floor(wordArray.length))]
+const totalGuesses = Math.ceil(randWord.split('').length / 2);
 console.log(randWord)
 
 
