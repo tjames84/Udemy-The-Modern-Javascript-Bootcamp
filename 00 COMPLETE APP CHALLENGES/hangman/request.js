@@ -2,21 +2,35 @@
 // httpstatuses.com
 // mdn http message
 
-const getPuzzle = (wordCount) => {
-  return fetch(`http://puzzle.mead.io/puzzle?wordCount=${wordCount}`)
-    .then((response) => {
-      if (response.status === 200) {
-        return response.json();
-      } else {
-        throw new Error("Unable to fetch puzzle");
-      }
-    })
-    .then((data) => {
-      return data.puzzle;
-    });
+const getPuzzle = async (wordCount) => {
+  const response = await fetch(
+    `http://puzzle.mead.io/puzzle?wordCount=${wordCount}`
+  );
+
+  if (response.status === 200) {
+    const data = await response.json();
+    return data.puzzle;
+  } else {
+    throw new Error("Unable to get puzzle");
+  }
 };
 
+
 // OLD *************************************************************
+
+// const getPuzzle = (wordCount) => {
+//   return fetch(`http://puzzle.mead.io/puzzle?wordCount=${wordCount}`)
+//     .then((response) => {
+//       if (response.status === 200) {
+//         return response.json();
+//       } else {
+//         throw new Error("Unable to fetch puzzle");
+//       }
+//     })
+//     .then((data) => {
+//       return data.puzzle;
+//     });
+// };
 
 // const getPuzzle = (wordCount, callback) => {
 //   const request = new XMLHttpRequest();
