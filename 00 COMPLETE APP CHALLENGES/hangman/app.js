@@ -21,6 +21,7 @@ getPuzzle("2")
     console.log(`Error: ${err}`);
   });
 
+// OLD *************************************************************
 // Asynchornous
 // getPuzzle("2", (error, puzzle) => {
 //   if (error) {

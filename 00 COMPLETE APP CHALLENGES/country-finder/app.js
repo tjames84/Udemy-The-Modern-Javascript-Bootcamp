@@ -6,7 +6,17 @@
 const countryName = document.querySelector("#country-name");
 const countryFlag = document.querySelector("#country-flag");
 
-const countryISOcode = "jp";
+const countryISOcode = "us";
+
+getCountry(countryISOcode.toUpperCase())
+  .then((country) => {
+    countryName.textContent = `Country Name: ${country.name}`;
+  })
+  .catch((err) => {
+    console.log(`Error: ${err}`);
+  });
+
+// OLD *************************************************************
 
 // getCountry( countryISOcode.toUpperCase(), (error, country) => {
 //   if (error) {
@@ -18,11 +28,11 @@ const countryISOcode = "jp";
 // });
 
 // using Promises
-getCountry(countryISOcode.toUpperCase()).then(
-  (country) => {
-    countryName.textContent = `Country Name: ${country.name}`;
-  },
-  (err) => {
-    console.log(`Error: ${err}`);
-  }
-);
+// getCountry(countryISOcode.toUpperCase()).then(
+//   (country) => {
+//     countryName.textContent = `Country Name: ${country.name}`;
+//   },
+//   (err) => {
+//     console.log(`Error: ${err}`);
+//   }
+// );
