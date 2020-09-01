@@ -16,6 +16,14 @@ getCountry(countryISOcode.toUpperCase())
     console.log(`Error: ${err}`);
   });
 
+getCurrentCountry()
+  .then((country) => {
+    console.log(country.name);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
 // OLD *************************************************************
 
 // getCountry( countryISOcode.toUpperCase(), (error, country) => {
