@@ -3,10 +3,16 @@
 // mdn http message
 // https://restcountries.eu/rest/v2/all
 
-getCountry("JP", (error, country) => {
+const countryName = document.querySelector('#country-name');
+const countryFlag = document.querySelector('#country-flag');
+
+const countryISOcode = "us";
+
+getCountry( countryISOcode.toUpperCase(), (error, country) => {
   if (error) {
     console.log(error);
   } else {
-    console.log(`Country name: ${country.name}`);
+   countryName.textContent = (`Country name: ${country.name}`);
+   
   }
 });
