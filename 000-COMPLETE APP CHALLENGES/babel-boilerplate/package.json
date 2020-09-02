@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "main": "input.js",
   "scripts": {
+    "serve": "live-server public",
     "build": "babel src/index.js --out-file public/scripts/bundle.js --presets env --watch"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "babel-preset-env": "^1.6.1"
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "live-server": "^1.2.0"
   },
   "keywords": [],
   "devDependencies": {},

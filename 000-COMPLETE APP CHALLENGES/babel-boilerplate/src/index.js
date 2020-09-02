@@ -1,13 +1,8 @@
 /**
+ * install node modules
+ *  sudo npm install
  * 
- * babel 'name of input file' -o 'name output file'
- * 
- * npm init
- * 
- * babel preset
- * npm install babel-preset-env@1.6.1
- * 
- * babel 'input file name' --out-file 'output file name' --presets env
+ * npm run build
  * 
  */
 
