@@ -21,6 +21,10 @@ How to use babel
 
         npm run build
 
+install babel loader
+
+    sudo npm install babel-loader@7.1.4
+
 uninstall babel and live-serer to set up as local
 
     npm uninstall -g babel-cli live-server
