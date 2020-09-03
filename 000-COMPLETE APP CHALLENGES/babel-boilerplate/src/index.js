@@ -1,8 +1,8 @@
-import Othersquare, { add, name } from './utilities';
-import { scream } from './scream';
+import otherSquare, { add, name } from './utilities';
+import otherScream from './scream';
 
 console.log('index.js');
 
-console.log(scream(name))
+console.log(otherScream(name))
 
-console.log(Othersquare(4))
+console.log(otherSquare(4))
