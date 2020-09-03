@@ -5,4 +5,4 @@ console.log('index.js');
 
 console.log(otherScream(name))
 
-console.log(otherSquare(4))
+console.log(otherSquare(10))
