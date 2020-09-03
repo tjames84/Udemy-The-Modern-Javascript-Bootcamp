@@ -33,3 +33,10 @@ to start up server
 
     npm run build
     npm run serve
+
+
+webpack
+
+    npm install webpack@4.5.0 webpack-cli@2.0.14
+
+    npm run webpack
