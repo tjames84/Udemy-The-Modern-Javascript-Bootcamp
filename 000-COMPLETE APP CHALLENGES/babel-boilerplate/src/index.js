@@ -1,16 +1,8 @@
-/**
- * install node modules
- *  sudo npm install
- * 
- * npm run build
- * 
- */
+import Othersquare, { add, name } from './utilities';
+import { scream } from './scream';
 
-const name = 'Jen'
-console.log(name)
+console.log('index.js');
 
-class Hangman {
-    myMethod() {
-        return 'Testing'
-    }
-}
+console.log(scream(name))
+
+console.log(Othersquare(4))
